@@ -1,0 +1,147 @@
+body[data-theme="dark"] {
+    --bg-dark: hsl(0, 0%, 0%);
+    --bg: hsl(0, 0%, 5%);
+    --bg-light: hsl(0, 0%, 10%);
+    --text: hsl(0, 0%, 95%);
+    --text-muted: hsl(0, 0%, 70%);
+    --border: hsl(0, 0%, 20%);
+    --gradient: linear-gradient(0deg, var(--bg) 80%, var(--bg-light));
+}
+
+body[data-theme="light"] {
+    --bg-dark: hsl(0, 0%, 90%);
+    --bg: hsl(0, 0%, 95%);
+    --bg-light: hsl(0, 0%, 100%);
+    --text: hsl(0, 0%, 5%);
+    --text-muted: hsl(0, 0%, 30%);
+}
+
+body { /* placeholder fixed light theme */
+    --bg-dark: hsl(0, 0%, 90%);
+    --bg: hsl(0, 0%, 95%);
+    --bg-light: hsl(0, 0%, 100%);
+    --text: hsl(0, 0%, 5%);
+    --text-muted: hsl(0, 0%, 30%);
+}
+
+body {
+    font-family: sans-serif;
+    display: block;
+    /* justify-content: center; */
+    height: 100dvh;
+    width: 100dvw;
+    margin: 0;
+    background-color: var(--bg-dark);
+    color: var(--text);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#header {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    background-color: var(--bg);
+    width: 100%;
+    height: 6%;
+    border: none;
+}
+
+#themeToggle {
+    all: unset;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--text);
+    background-color: var(--bg-light);
+    width: 24px;
+    height: 24px;
+    border: 1px, solid, var(--border);
+    margin-left: 1rem;
+}
+
+.mode-card {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 80%);
+    border-radius: 30px;
+    padding: 10px 14px;
+    margin: 20px;
+    gap:16px;
+    background-color: var(--bg);
+    border: 1px, solid, var(--border);
+    background: var(--gradient);
+    background-color: var(--bg);
+}
+
+/* Button styles (restoring the project's intended look) */
+.button {
+    border-radius: 20lvw;
+    border: 1px solid transparent;
+    padding: 0.4em 0.8em;
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: var(--bg-light);
+    color: var(--text);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.15s ease;
+    background-color: var(--bg);
+}
+.button:hover {
+    /*border-color: #646cff;*/
+    background-color: var(--bg-dark);
+
+}
+
+#toDoListCard {
+    display: block;
+}
+
+.counterButton {
+    all: unset;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--text);
+    background-color: var(--bg-light);
+    width: 24px;
+    height: 24px;
+    border: 1px, solid, var(--border);
+}
+
+.page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100vw;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+}
+
+h3 {
+    font-weight: normal;
+    font-size: 20px;
+    color: var(--text-muted);
+}
+
+.inputBar {
+    display: flex;
+}
