@@ -145,3 +145,28 @@ h3 {
 .inputBar {
     display: flex;
 }
+
+/* MAP ELEMENTS */
+
+.leaflet-marker-icon.leaflet-div-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.marker {
+    all: unset;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    transform: rotate(-45deg);
+    border-radius: 50% 50% 50% 0;
+    height: 40px;
+    width: 40px;
+}
+
+.marker > .icon {
+    transform: rotate(45deg);
+    color: white;
+}

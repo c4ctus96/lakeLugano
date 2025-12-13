@@ -1,12 +1,27 @@
 import React, { useEffect, useState } from "react";
+import ReactDOMServer from "react-dom/server"
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { MapContainer, TileLayer, Popup, Marker, useMap, Polyline } from 'react-leaflet'
+import L from "leaflet";
 import { db } from './Firebase';
-import { useMode } from './ModeContext'
+import { useMode } from './ModeContext';
+
+import { PiTrain } from "react-icons/pi";
+
 
 function MarkersOverlay() {
     const [markers, setMarkers] = useState([]);
     const { mode } = useMode();
+
+    const icon = L.divIcon({
+        html: ReactDOMServer.renderToString(
+            <div className="marker">
+                <PiTrain size={30} className="icon" />
+            </div>
+        ),
+        iconSize: [40, 40],
+        iconAnchor: [20, 40]
+    });
 
     useEffect(() => {
         const markersModeQuery = query(
@@ -37,7 +52,8 @@ function MarkersOverlay() {
         <>
             {pointObject.map((marker, i) => (
                 <React.Fragment key={`group ${i}`}>
-                    <Marker key={`marker ${i}`} position={[marker.latitude, marker.longitude]} />
+                    <Marker key={`marker ${i}`} icon={icon} position={[marker.latitude, marker.longitude]} />
+                    
                 </React.Fragment>
             ))}
         </>
