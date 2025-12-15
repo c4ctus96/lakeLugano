@@ -1,16 +1,13 @@
-// styles are loaded globally from src/main.jsx
-import ModeSelector from './components/ModeSelector'
-import Map from './components/Map'
-import { ModeProvider } from './components/ModeContext'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainPage from './components/MainPage'
 
 function App() {
   return (
-    <div className="mainPage">
-      <ModeProvider>
-        <ModeSelector />
-        <Map />
-      </ModeProvider>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

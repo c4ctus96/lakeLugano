@@ -7,6 +7,7 @@ import { db } from './Firebase';
 import { useMode } from './ModeContext';
 
 import { PiTrain } from "react-icons/pi";
+import { MdElectricBike } from "react-icons/md";
 
 
 function MarkersOverlay() {
