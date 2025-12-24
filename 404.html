@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=/lakeLugano/" />
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <script>
+      // Your repo name
+      const repo = "/lakeLugano";
+
+      // Full path the user tried to access
+      const fullPath = window.location.pathname;
+
+      // Remove the repo prefix so React Router sees the correct route
+      const redirectPath = fullPath.replace(repo, "");
+
+      // Redirect to index.html with the intended path encoded
+      window.location.replace(`${repo}/index.html?redirect=${redirectPath}`);
+    </script>
   </head>
   <body></body>
 </html>
