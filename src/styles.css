@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'bring_race'; /*a name to be used later*/
+    src: url('./fonts/Bring_Race.otf'); /*URL to font*/
+}
+
 body[data-theme="dark"] {
     --bg-dark: hsl(0, 0%, 0%);
     --bg: hsl(0, 0%, 5%);
@@ -16,12 +21,15 @@ body[data-theme="light"] {
     --text-muted: hsl(0, 0%, 30%);
 }
 
-body { /* placeholder fixed light theme */
+body {
+    /* placeholder fixed light theme */
     --bg-dark: hsl(0, 0%, 90%);
     --bg: hsl(0, 0%, 95%);
     --bg-light: hsl(0, 0%, 100%);
     --text: hsl(0, 0%, 5%);
     --text-muted: hsl(0, 0%, 30%);
+    --border: hsl(0, 0%, 80%);
+    --gradient: linear-gradient(0deg, var(--bg) 80%, var(--bg-light));
 }
 
 body {
@@ -35,6 +43,11 @@ body {
     color: var(--text);
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+#root {
+    height: 100vh;
+    width: 100vw;
 }
 
 #header {
@@ -60,6 +73,17 @@ body {
     margin-left: 1rem;
 }
 
+#adminPage {
+    background-image: url("./assets/batcave_bg.jpeg");
+    background-position: center;
+}
+
+#adminWelcomeText {
+    color: yellow;
+    font-family: "Bring_Race";
+    width: 20dvw;
+}
+
 .mode-card {
     display: flex;
     position: fixed;
@@ -70,7 +94,7 @@ body {
     border-radius: 30px;
     padding: 10px 14px;
     margin: 20px;
-    gap:16px;
+    gap: 16px;
     background-color: var(--bg);
     border: 1px, solid, var(--border);
     background: var(--gradient);
@@ -91,10 +115,10 @@ body {
     transition: border-color 0.2s ease, background-color 0.15s ease;
     background-color: var(--bg);
 }
+
 .button:hover {
     /*border-color: #646cff;*/
     background-color: var(--bg-dark);
-
 }
 
 #toDoListCard {
@@ -133,8 +157,47 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 250px;
+    width: max(250px, fit-content);
 }
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 32px 40px;
+    gap: 16px;
+    background-color: var(--bg);
+    border: 1px, solid, var(--border);
+    background: var(--gradient);
+}
+
+#uploadTools {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    margin: 20px;
+}
+
+#gpxUploadPage {
+    align-items: start;
+    justify-content: left;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-direction: column;
+}
+
+.buttonsRow {
+    display: flex;
+    gap: 0.5em;
+}
+
 
 h3 {
     font-weight: normal;
@@ -149,8 +212,8 @@ h3 {
 /* MAP ELEMENTS */
 
 .leaflet-marker-icon.leaflet-div-icon {
-  background: transparent !important;
-  border: none !important;
+    background: transparent !important;
+    border: none !important;
 }
 
 .marker {
@@ -159,14 +222,14 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    background-color: rgb(24, 99, 211);
     transform: rotate(-45deg);
     border-radius: 50% 50% 50% 0;
     height: 40px;
     width: 40px;
 }
 
-.marker > .icon {
+.marker>.icon {
     transform: rotate(45deg);
     color: white;
 }
