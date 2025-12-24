@@ -81,7 +81,7 @@ body {
 #adminWelcomeText {
     color: yellow;
     font-family: "Bring_Race";
-    width: 20dvw;
+    width: max(300px, 20dvw);
 }
 
 .mode-card {
