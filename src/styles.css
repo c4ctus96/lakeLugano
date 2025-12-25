@@ -1,6 +1,8 @@
 @font-face {
-    font-family: 'bring_race'; /*a name to be used later*/
-    src: url('./fonts/Bring_Race.otf'); /*URL to font*/
+    font-family: 'bring_race';
+    /*a name to be used later*/
+    src: url('./fonts/Bring_Race.otf');
+    /*URL to font*/
 }
 
 body[data-theme="dark"] {
@@ -101,8 +103,59 @@ body {
     background-color: var(--bg);
 }
 
+@media (max-width: 600px) {
+    .mode-card {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        padding-left: 14px;
+        padding-right: 14px;
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        background-color: hsl(0, 0%, 80%);
+        border-radius: 0px;
+        padding: 10px 14px;
+        margin: 0px;
+        gap: min(16px, 2dvw);
+        background-color: var(--bg);
+        border: 1px, solid, var(--border);
+        background: var(--gradient);
+        background-color: var(--bg);
+    }
+
+    .button {
+        display: flex;
+        width: 19%;
+        text-align: center;
+        min-width: 0;
+        flex-direction: column;
+        white-space: nowrap;
+        gap: 4px;
+
+        align-items: center;
+        justify-content: center;
+        border-radius: 20lvw;
+        border: 1px solid transparent;
+        padding: 0.4em 0.8em;
+        font-size: 0.95rem;
+        font-weight: 500;
+        font-family: inherit;
+        background-color: var(--bg-light);
+        color: var(--text);
+        cursor: pointer;
+        transition: border-color 0.2s ease, background-color 0.15s ease;
+        background-color: var(--bg);
+    }
+}
+
 /* Button styles (restoring the project's intended look) */
 .button {
+    align-items: center;
+    justify-content: center;
     border-radius: 20lvw;
     border: 1px solid transparent;
     padding: 0.4em 0.8em;
