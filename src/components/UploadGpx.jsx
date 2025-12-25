@@ -150,15 +150,15 @@ function UploadGpx() {
                         <a>Modalità:</a>
                         <label>
                             <input type="checkbox" name="tags" value="walk" />
-                            Walk
+                            A piedi
                         </label>
                         <label>
                             <input type="checkbox" name="tags" value="bike" />
-                            Bike
+                            In bici
                         </label>
                         <label>
                             <input type="checkbox" name="tags" value="swim" />
-                            Swim
+                            Nuoto
                         </label>
                     </div>
                     <div className="buttonsRow">
