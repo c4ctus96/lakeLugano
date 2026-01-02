@@ -157,7 +157,6 @@ button:disabled {
 }
 
 .container {
-    padding: 0;
     gap: 2rem;
     display: flex;
     flex-direction: row;
@@ -214,13 +213,18 @@ p {
 }
 
 .cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    border-radius: 20lvw;
     font-size: clamp(1rem, 3vw, 1.5rem);
     font-weight: bold;
+    text-decoration: none;
     background-color: var(--accent);
     color: white;
     border-color: var(--bg);
-    border-radius: 1rem;
-    padding: 0.7rem, 1rem;
+    padding: 0.7rem 1rem;
 }
 
 .cta:hover {

@@ -1,5 +1,6 @@
 import lakeSelfie from '../assets/lakeSelfie1.jpeg'
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
     const { t } = useTranslation();
@@ -15,7 +16,7 @@ const LandingPage = () => {
                 <div className="content">
                         <h1>{t("landingPage.section1.title")}</h1>
                         <p>{t("landingPage.section1.text")}</p>
-                        <button className="cta" >{t("landingPage.section1.cta")}</button>
+                        <Link to="/map" className="cta" >{t("landingPage.section1.cta")}</Link>
                 </div>
             </div>
         </div>
