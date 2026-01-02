@@ -5,6 +5,8 @@
     /*URL to font*/
 }
 
+
+
 body[data-theme="dark"] {
     --bg-dark: hsl(0, 0%, 0%);
     --bg: hsl(0, 0%, 5%);
@@ -13,6 +15,7 @@ body[data-theme="dark"] {
     --text-muted: hsl(0, 0%, 70%);
     --border: hsl(0, 0%, 20%);
     --gradient: linear-gradient(0deg, var(--bg) 80%, var(--bg-light));
+    --accent: hsl(204, 62%, 27%);
 }
 
 body[data-theme="light"] {
@@ -21,10 +24,12 @@ body[data-theme="light"] {
     --bg-light: hsl(0, 0%, 100%);
     --text: hsl(0, 0%, 5%);
     --text-muted: hsl(0, 0%, 30%);
+    --border: hsl(0, 0%, 80%);
+    --gradient: linear-gradient(0deg, var(--bg) 80%, var(--bg-light));
+    --accent: hsl(204, 62%, 27%);
 }
 
 body {
-    /* placeholder fixed light theme */
     --bg-dark: hsl(0, 0%, 90%);
     --bg: hsl(0, 0%, 95%);
     --bg-light: hsl(0, 0%, 100%);
@@ -32,6 +37,7 @@ body {
     --text-muted: hsl(0, 0%, 30%);
     --border: hsl(0, 0%, 80%);
     --gradient: linear-gradient(0deg, var(--bg) 80%, var(--bg-light));
+    --accent: hsl(204, 62%, 27%);
 }
 
 body {
@@ -53,6 +59,7 @@ body {
 }
 
 #header {
+    top: 0;
     display: flex;
     position: fixed;
     align-items: center;
@@ -75,17 +82,6 @@ body {
     margin-left: 1rem;
 }
 
-#adminPage {
-    background-image: url("./assets/batcave_bg.jpeg");
-    background-position: center;
-}
-
-#adminWelcomeText {
-    color: yellow;
-    font-family: "Bring_Race";
-    width: max(300px, 20dvw);
-}
-
 .mode-card {
     display: flex;
     position: fixed;
@@ -97,82 +93,43 @@ body {
     padding: 10px 14px;
     margin: 20px;
     gap: 16px;
-    background-color: var(--bg);
     border: 1px, solid, var(--border);
-    background: var(--gradient);
-    background-color: var(--bg);
+    /*background: var(--gradient);*/
+    background-color: var(--bg-light);
 }
 
-@media (max-width: 600px) {
-    .mode-card {
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-
-        padding-left: 14px;
-        padding-right: 14px;
-        z-index: 1000;
-        justify-content: center;
-        align-items: center;
-        background-color: hsl(0, 0%, 80%);
-        border-radius: 0px;
-        padding: 10px 14px;
-        margin: 0px;
-        gap: min(16px, 2dvw);
-        background-color: var(--bg);
-        border: 1px, solid, var(--border);
-        background: var(--gradient);
-        background-color: var(--bg);
-    }
-
-    .button {
-        display: flex;
-        width: 19%;
-        text-align: center;
-        min-width: 0;
-        flex-direction: column;
-        white-space: nowrap;
-        gap: 4px;
-
-        align-items: center;
-        justify-content: center;
-        border-radius: 20lvw;
-        border: 1px solid transparent;
-        padding: 0.4em 0.8em;
-        font-size: 0.95rem;
-        font-weight: 500;
-        font-family: inherit;
-        background-color: var(--bg-light);
-        color: var(--text);
-        cursor: pointer;
-        transition: border-color 0.2s ease, background-color 0.15s ease;
-        background-color: var(--bg);
-    }
-}
-
-/* Button styles (restoring the project's intended look) */
-.button {
+button {
+    display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.3rem;
     border-radius: 20lvw;
-    border: 1px solid transparent;
+    border: transparent;
     padding: 0.4em 0.8em;
     font-size: 0.95rem;
     font-weight: 500;
     font-family: inherit;
-    background-color: var(--bg-light);
     color: var(--text);
     cursor: pointer;
     transition: border-color 0.2s ease, background-color 0.15s ease;
-    background-color: var(--bg);
+    background-color: var(--bg-light);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
+        -2px -2px 5px rgba(255, 255, 255, 0.1);
 }
 
-.button:hover {
-    /*border-color: #646cff;*/
-    background-color: var(--bg-dark);
+button:hover {
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+        inset -2px -2px 5px rgba(255, 255, 255, 0.1);
 }
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    box-shadow: none;
+}
+
+
+
 
 #toDoListCard {
     display: block;
@@ -192,30 +149,51 @@ body {
 
 .page {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex: 1 1 auto;
     height: 100%;
     width: 100vw;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0;
     gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+
     flex-wrap: wrap
 }
 
 .content {
+    flex: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    width: max(250px, fit-content);
+    width: 100%;
+    min-width: 300px;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+#imageContainer {
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .card {
     display: flex;
-    justify-content: center;
+    flex: 1 1 auto;
+    flex-direction: column;
+    justify-content: top;
     align-items: center;
     border-radius: 20px;
     padding: 32px 40px;
@@ -223,6 +201,53 @@ body {
     background-color: var(--bg);
     border: 1px, solid, var(--border);
     background: var(--gradient);
+}
+
+h1 {
+    font-size: clamp(2rem, 10vw, 4rem);
+}
+
+p {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: var(--text-muted);
+    line-height: 2rem;
+}
+
+.cta {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: bold;
+    background-color: var(--accent);
+    color: white;
+    border-color: var(--bg);
+    border-radius: 1rem;
+    padding: 0.7rem, 1rem;
+}
+
+.cta:hover {
+    background-color: var(--bg);
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* ADMIN PANEL */
+
+#adminPage {
+    background-image: url("./assets/batcave_bg.jpeg");
+    background-position: center;
+    width: 100%;
+}
+
+#adminPage .container {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#adminWelcomeText {
+    color: yellow;
+    font-family: "Bring_Race";
+
 }
 
 #uploadTools {
@@ -285,4 +310,54 @@ h3 {
 .marker>.icon {
     transform: rotate(45deg);
     color: white;
+}
+
+@media (max-width: 600px) {
+
+    .mode-card {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        padding-left: 14px;
+        padding-right: 14px;
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        background-color: hsl(0, 0%, 80%);
+        border-radius: 0px;
+        padding: 10px 14px;
+        margin: 0px;
+        gap: min(16px, 2dvw);
+        background-color: var(--bg);
+        border: 1px, solid, var(--border);
+        background: var(--gradient);
+        background-color: var(--bg);
+    }
+
+    .button {
+        display: flex;
+        width: 19%;
+        text-align: center;
+        min-width: 0;
+        flex-direction: column;
+        white-space: nowrap;
+        gap: 4px;
+
+        align-items: center;
+        justify-content: center;
+        border-radius: 20lvw;
+        border: 1px solid transparent;
+        padding: 0.4em 0.8em;
+        font-size: 0.95rem;
+        font-weight: 500;
+        font-family: inherit;
+        background-color: var(--bg-light);
+        color: var(--text);
+        cursor: pointer;
+        transition: border-color 0.2s ease, background-color 0.15s ease;
+        background-color: var(--bg);
+    }
 }

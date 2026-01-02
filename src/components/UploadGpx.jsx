@@ -79,7 +79,7 @@ function UploadGpx() {
             </MapContainer>
 
             <div className="card" id="uploadTools">
-                <h1>Aggiungi percorso</h1>
+                <h2>Aggiungi percorso</h2>
                 <form onSubmit={
                     (e) => {
                         e.preventDefault();

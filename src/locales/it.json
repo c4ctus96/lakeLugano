@@ -1,7 +1,16 @@
 {
-    "bike_mode_btn": "In bici",
-    "walk_mode_btn": "A piedi",
-    "explore_mode_btn": "Esplora",
-    "commute_mode_btn": "Mezzi",
-    "swim_mode_btn": "Nuoto"
+    "modeSelector": {
+        "bike": "In bici",
+        "walk": "A piedi",
+        "explore": "Esplora",
+        "commute": "Pendolare",
+        "swim": "Nuoto"
+    },
+    "landingPage": {
+        "section1": {
+            "title": "Esplora i panorami mozzafiato!",
+            "text": "Scopri i sentieri più panoramici intorno al Lago di Lugano. Che tu vada in bici, a piedi o stia semplicemente esplorando, i nostri percorsi selezionati offrono qualcosa per tutti. Inizia la tua avventura oggi!",
+            "cta": "Scopri i percorsi"
+        }
+    }
 }

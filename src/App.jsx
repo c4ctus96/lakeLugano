@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import MainPage from './components/MainPage'
+import LandingPage from './components/LandingPage'
 import AdminPanel from './components/AdminPanel'
 import UploadGpx from './components/UploadGpx'
 
@@ -16,7 +17,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<MainPage />} />
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/map" element={<MainPage />} />
       <Route path="/admin" element={<AdminPanel />} />
       <Route path="/admin/uploadGpx" element={<UploadGpx />} />
     </Routes>
