@@ -2,12 +2,14 @@ import lakeSelfie from '../assets/lakeSelfie1.jpeg'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
+import ThemeSwitch from './ThemeSwitch';
+
 const LandingPage = () => {
     const { t } = useTranslation();
     return (
         <div className="page" id="landingPage">
             <div id="header">
-                <button id="themeToggle"></button>
+                <ThemeSwitch />
             </div>
             <div className="container">
                 <div className="content" id="imageContainer">

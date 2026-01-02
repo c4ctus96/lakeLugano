@@ -4,6 +4,17 @@
     src: url('./fonts/Bring_Race.otf');
     /*URL to font*/
 }
+body {
+    --bg-dark: hsl(0, 0%, 90%);
+    --bg: hsl(0, 0%, 95%);
+    --bg-light: hsl(0, 0%, 100%);
+    --text: hsl(0, 0%, 5%);
+    --text-muted: hsl(0, 0%, 30%);
+    --border: hsl(0, 0%, 80%);
+    --gradient: linear-gradient(0deg, var(--bg) 80%, var(--bg-light));
+    --accent: hsl(204, 62%, 27%);
+}
+
 
 
 
@@ -29,16 +40,6 @@ body[data-theme="light"] {
     --accent: hsl(204, 62%, 27%);
 }
 
-body {
-    --bg-dark: hsl(0, 0%, 90%);
-    --bg: hsl(0, 0%, 95%);
-    --bg-light: hsl(0, 0%, 100%);
-    --text: hsl(0, 0%, 5%);
-    --text-muted: hsl(0, 0%, 30%);
-    --border: hsl(0, 0%, 80%);
-    --gradient: linear-gradient(0deg, var(--bg) 80%, var(--bg-light));
-    --accent: hsl(204, 62%, 27%);
-}
 
 body {
     font-family: sans-serif;
@@ -117,10 +118,7 @@ button {
         -2px -2px 5px rgba(255, 255, 255, 0.1);
 }
 
-button:hover {
-    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
-        inset -2px -2px 5px rgba(255, 255, 255, 0.1);
-}
+
 
 button:disabled {
     cursor: not-allowed;
@@ -194,6 +192,7 @@ img {
     flex-direction: column;
     justify-content: top;
     align-items: center;
+    max-width: 90dvw;
     border-radius: 20px;
     padding: 32px 40px;
     gap: 16px;
@@ -227,11 +226,7 @@ p {
     padding: 0.7rem 1rem;
 }
 
-.cta:hover {
-    background-color: var(--bg);
-    color: var(--accent);
-    border-color: var(--accent);
-}
+
 
 /* ADMIN PANEL */
 
@@ -364,4 +359,24 @@ h3 {
         transition: border-color 0.2s ease, background-color 0.15s ease;
         background-color: var(--bg);
     }
+}
+
+@media (hover: hover) {
+    button:hover {
+        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+            inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+    }
+
+    .cta:hover {
+        background-color: var(--bg);
+        color: var(--accent);
+        border-color: var(--accent);
+    }
+}
+
+@media (hover: none) {
+  .button:active,
+  .cta:active {
+    transform: scale(0.97);
+  }
 }
