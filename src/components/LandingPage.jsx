@@ -1,4 +1,5 @@
 import lakeSelfie from '../assets/lakeSelfie1.jpeg'
+import Header from './Header.jsx';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -9,10 +10,7 @@ const LandingPage = () => {
     const { t } = useTranslation();
     return (
         <div className="page" id="landingPage">
-            <div id="header">
-                <ThemeSwitch />
-                <LanguageSelector />
-            </div>
+            <Header />
             <div className="container">
                 <div className="content" id="imageContainer">
                     {<img src={lakeSelfie} alt="Lake Selfie" />}
