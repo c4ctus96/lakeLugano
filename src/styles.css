@@ -64,7 +64,7 @@ body {
     top: 0;
     display: flex;
     padding-right: 2rem;
-    gap: 2rem;
+    gap: 1rem;
     position: fixed;
     align-items: center;
     justify-content: flex-end;

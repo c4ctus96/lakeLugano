@@ -163,7 +163,7 @@ function UploadGpx() {
                     </div>
                     <div className="buttonsRow">
                         <button onClick={() => console.log(trackData)} type="submit">Applica</button>
-                        <button onClick={() => pushTrack(trackData)} disabled={trackData.track?.length === 0} >Pubblica</button>
+                        <button onClick={() => {pushTrack(trackData); alert("Percorso caricato!")}} disabled={trackData.track?.length === 0} >Pubblica</button>
                     </div>
                 </form>
             </div>

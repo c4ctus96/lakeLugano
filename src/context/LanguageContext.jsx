@@ -15,6 +15,7 @@ export function LanguageProvider({ children }) {
         localStorage.setItem("language", language);
         i18n.changeLanguage(language);
         document.documentElement.setAttribute("lang", language);
+        console.log("system language:", navigator.languages);
     }, [language]);
 
     return (
