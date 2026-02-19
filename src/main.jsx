@@ -1,8 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+
 import { ThemeProvider } from './context/ThemeContext.jsx'
 import { LanguageProvider } from './context/LanguageContext.jsx'
+import { FocusProvider } from './context/FocusContext.jsx'
+import { ModeProvider } from './context/ModeContext.jsx'
+import { TrailsProvider } from './context/TrailsContext.jsx'
 
 //import './index.css'
 import './styles.css'
@@ -14,7 +18,13 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter basename={import.meta.env.PROD ? "/lakeLugano" : "/"}>
       <ThemeProvider>
         <LanguageProvider>
-          <App />
+          <ModeProvider>
+            <FocusProvider>
+              <TrailsProvider>
+                <App />
+              </TrailsProvider>
+            </FocusProvider>
+          </ModeProvider>
         </LanguageProvider>
       </ThemeProvider>
     </BrowserRouter>

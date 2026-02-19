@@ -4,8 +4,8 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { MapContainer, TileLayer, Popup, Marker, useMap, Polyline } from 'react-leaflet'
 import L from "leaflet";
 import { db } from './Firebase';
-import { useMode } from './ModeContext';
-
+import { useMode } from '../context/ModeContext';
+import CustomMarker from "./CustomMarker";
 import { PiTrain } from "react-icons/pi";
 import { MdElectricBike } from "react-icons/md";
 
@@ -30,7 +30,6 @@ function MarkersOverlay() {
             where("tags", "array-contains", mode)
         );
 
-        console.log("Map render mode: ", mode);
         const fetchData = async () => {
             try {
                 const querySnapshot = await getDocs(markersModeQuery);
@@ -52,10 +51,10 @@ function MarkersOverlay() {
     return (
         <>
             {pointObject.map((marker, i) => (
-                <React.Fragment key={`group ${i}`}>
-                    <Marker key={`marker ${i}`} icon={icon} position={[marker.latitude, marker.longitude]} />
-                    
-                </React.Fragment>
+                <CustomMarker
+                    key={i}
+                    position={[marker.latitude, marker.longitude]}
+                />
             ))}
         </>
     );

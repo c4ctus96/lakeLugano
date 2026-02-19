@@ -4,7 +4,11 @@
         "walk": "A piedi",
         "explore": "Esplora",
         "commute": "Mezzi",
-        "swim": "Nuoto"
+        "boats": "Barche"
+    },
+    "menu": {
+        "difficulty": "Difficoltà",
+        "length": "Lunghezza"
     },
     "landingPage": {
         "section1": {

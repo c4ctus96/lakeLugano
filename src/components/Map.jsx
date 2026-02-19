@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Popup, Marker, useMap, Polyline } from 'react-
 import "leaflet-gpx";
 import TrailsOverlay from './TrailsOverlay';
 import MarkersOverlay from './MarkersOverlay';
-import { useMode } from './ModeContext';
+import { useMode } from '../context/ModeContext';
 
 
 function Map() {
