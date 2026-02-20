@@ -9,12 +9,25 @@ export function TrailsProvider({ children }) {
     const [trails, setTrails] = useState([]);
     const { mode } = useMode();
 
+    const typesByMode = {
+        "walk": ["hikeTrail"],
+        "bike": ["bikeTrail", "eBikeStation"],
+        "explore": ["legacy", "restaraunt", "viewoint"],
+        "commute": ["busStation", "trainStation", "ferryPort"],
+        "boats": ["boatStation"]
+    };
 
+    const allowedTypes = typesByMode[mode] || [];
 
     useEffect(() => {
+        if (!allowedTypes.length) {
+            setTrails([]);
+            return;
+        }
+
         const trailsModeQuery = query(
             collection(db, "trails"),
-            where("tags", "array-contains", mode)
+            where("types", "array-contains-any", allowedTypes)
         );
 
         const fetchData = async () => {
@@ -26,7 +39,7 @@ export function TrailsProvider({ children }) {
                 }));
 
                 console.log("Fetched trails:", data);
-                
+
                 setTrails(data);
             } catch (error) {
                 console.error("Error fetching trails:", error);
@@ -34,7 +47,7 @@ export function TrailsProvider({ children }) {
         };
 
         console.log("TrailsProvider mode:", mode);
-        
+
 
         fetchData();
     }, [mode]);

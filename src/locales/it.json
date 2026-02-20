@@ -10,6 +10,12 @@
         "difficulty": "Difficoltà",
         "length": "Lunghezza"
     },
+    "difficulty": {
+        "0": "Facile",
+        "1": "Media",
+        "2": "Difficile",
+        "3": "Esperto"
+    },
     "landingPage": {
         "section1": {
             "title": "Esplora i panorami mozzafiato!",

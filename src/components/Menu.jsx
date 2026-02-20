@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useFocus } from '../context/FocusContext.jsx';
 import { useTrails } from '../context/TrailsContext.jsx';
 
-import { SlClose } from "react-icons/sl";
+import { IoClose } from "react-icons/io5";
 
 export default function Menu() {
     const { language, setLanguage } = useLanguage();
@@ -16,10 +16,10 @@ export default function Menu() {
 
     return (
         <div id="menu">
-            <button onClick={() => {setFocus(null)}}><SlClose /></button>
+            <button onClick={() => {setFocus(null)}}><IoClose /></button>
             <h2>{selectedTrail?.name}</h2>
             <p>{t("menu.length")}: {selectedTrail?.lengthKm} km</p>
-            <p>{t("menu.difficulty")}: {selectedTrail?.difficulty}</p>
+            <p>{t("menu.difficulty")}: {t(`difficulty.${selectedTrail?.difficulty}`)}</p>
             <p>{selectedTrail?.description}</p>
         </div>
     );

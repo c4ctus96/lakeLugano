@@ -9,9 +9,9 @@ const position = [45.9863, 8.9700]
 function UploadGpx() {
     const [trackData, setTrackData] = useState({
         name: "",
-        difficulty: "",
+        difficulty: 0,
         lengthKm: 0,
-        tags: [],
+        types: [],
         description: "",
         src: "",
         track: []
@@ -39,8 +39,8 @@ function UploadGpx() {
             description: formData.get("description"),
             src: formData.get("src"),
             lengthKm: parseFloat(formData.get("length")),
-            difficulty: formData.get("difficulty"),
-            tags: formData.getAll("tags"),
+            difficulty: Number(formData.get("difficulty")),
+            tags: formData.getAll("types"),
             track: parsedTrack
         };
         setTrackData(newTrack);
@@ -138,27 +138,23 @@ function UploadGpx() {
                         <label>
                             <select name="difficulty" required>
                                 <option value="">--Seleziona--</option>
-                                <option value="easy">Facile</option>
-                                <option value="moderate">Media</option>
-                                <option value="hard">Difficile</option>
-                                <option value="expert">Esperto</option>
+                                <option value="0">Facile</option>
+                                <option value="1">Media</option>
+                                <option value="2">Difficile</option>
+                                <option value="3">Esperto</option>
                             </select>
                         </label>
                     </div>
 
                     <div className="buttonsRow">
-                        <a>Modalità:</a>
+                        <a>Tipo:</a>
                         <label>
-                            <input type="checkbox" name="tags" value="walk" />
-                            A piedi
+                            <input type="checkbox" name="types" value="hikeTrail" />
+                            Percorso pedonale
                         </label>
                         <label>
-                            <input type="checkbox" name="tags" value="bike" />
-                            In bici
-                        </label>
-                        <label>
-                            <input type="checkbox" name="tags" value="swim" />
-                            Nuoto
+                            <input type="checkbox" name="types" value="bikeTrail" />
+                            Percorso in bici
                         </label>
                     </div>
                     <div className="buttonsRow">
