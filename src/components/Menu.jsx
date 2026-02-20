@@ -1,5 +1,4 @@
 import React from 'react';
-import { useLanguage } from '../context/LanguageContext.jsx';
 import { useTranslation } from 'react-i18next';
 import { useFocus } from '../context/FocusContext.jsx';
 import { useTrails } from '../context/TrailsContext.jsx';
@@ -7,7 +6,6 @@ import { useTrails } from '../context/TrailsContext.jsx';
 import { IoClose } from "react-icons/io5";
 
 export default function Menu() {
-    const { language, setLanguage } = useLanguage();
     const { t } = useTranslation();
     const { focus, setFocus } = useFocus();
     const { trails } = useTrails();

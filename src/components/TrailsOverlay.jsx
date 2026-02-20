@@ -8,6 +8,10 @@ function TrailsOverlay() {
     const { setFocus } = useFocus();
     const { trails } = useTrails();
 
+    const difficultyColors = [
+        "green", "yellow", "red", "black"
+    ]
+    
     console.log("TrailsOverlay trails:", trails);
 
     return (
@@ -15,7 +19,7 @@ function TrailsOverlay() {
             {trails.map((route, i) => (
                 <React.Fragment key={`group ${i}`}>
                     <Polyline key={`route ${i}`} positions={route.track.map(point => [point.latitude, point.longitude])}
-                        color="red"
+                        color={difficultyColors[route.difficulty] || "blue"}
                         weight={4} />
                     <CustomMarker key={`marker ${i}`} position={[route.track[0].latitude, route.track[0].longitude]}
                     onClick={() => {
