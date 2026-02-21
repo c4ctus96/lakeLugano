@@ -33,7 +33,7 @@ export default function CustomMarker({ position, type, onClick }) {
             </div>
         ),
         iconSize: [40, 40],
-        iconAnchor: [20, 40]
+        iconAnchor: [20, 48]
     });
 
 

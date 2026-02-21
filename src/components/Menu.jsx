@@ -16,8 +16,8 @@ export default function Menu() {
         <div id="menu">
             <button onClick={() => {setFocus(null)}}><IoClose /></button>
             <h2>{selectedTrail?.name}</h2>
-            <p>{t("menu.length")}: {selectedTrail?.lengthKm} km</p>
-            <p>{t("menu.difficulty")}: {t(`difficulty.${selectedTrail?.difficulty}`)}</p>
+            {selectedTrail?.lengthKm && <p>{t("menu.length")}: {selectedTrail?.lengthKm} km</p>}
+            {selectedTrail?.difficulty && <p>{t("menu.difficulty")}: {t(`difficulty.${selectedTrail?.difficulty}`)}</p>}
             <p>{selectedTrail?.description}</p>
         </div>
     );
