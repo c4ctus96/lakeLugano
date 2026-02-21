@@ -10,6 +10,8 @@ import { MdOutlineElectricBike } from "react-icons/md";
 import { GrAnchor } from "react-icons/gr";
 import { FaCircleDot } from "react-icons/fa6";
 
+import { markerTypeColors } from '../constants/markerTypeColors';
+
 
 
 export default function CustomMarker({ position, type, onClick }) {
@@ -26,7 +28,7 @@ export default function CustomMarker({ position, type, onClick }) {
 
     const icon = L.divIcon({
         html: ReactDOMServer.renderToString(
-            <div className="marker">
+            <div className="marker" style={{backgroundColor: `${markerTypeColors[type] || markerTypeColors["default"]}`}}>
                 {icons[type] || icons["default"]}
             </div>
         ),
