@@ -6,7 +6,7 @@ import { ThemeProvider } from './context/ThemeContext.jsx'
 import { LanguageProvider } from './context/LanguageContext.jsx'
 import { FocusProvider } from './context/FocusContext.jsx'
 import { ModeProvider } from './context/ModeContext.jsx'
-import { TrailsProvider } from './context/TrailsContext.jsx'
+import { ObjectsProvider } from './context/ObjectsContext.jsx'
 
 //import './index.css'
 import './styles.css'
@@ -20,9 +20,9 @@ createRoot(document.getElementById('root')).render(
         <LanguageProvider>
           <ModeProvider>
             <FocusProvider>
-              <TrailsProvider>
+              <ObjectsProvider>
                 <App />
-              </TrailsProvider>
+              </ObjectsProvider>
             </FocusProvider>
           </ModeProvider>
         </LanguageProvider>

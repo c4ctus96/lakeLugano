@@ -1,0 +1,55 @@
+import React, { useEffect, useState } from "react";
+import { Polyline } from 'react-leaflet'
+import { useFocus } from '../context/FocusContext';
+import CustomMarker from "./CustomMarker";
+import { useObjects } from '../context/ObjectsContext';
+import { useMode } from '../context/ModeContext';
+import { difficultyColors } from '../constants/difficultyColors';
+import { GeoPoint } from "firebase/firestore";
+
+export default function MapObjectsOverlay() {
+    const { setFocus } = useFocus();
+    const { objects } = useObjects();
+    const { mode } = useMode();
+
+    const preferredTypes = {
+        "walk": ["hikeTrail"],
+        "bike": ["bikeTrail", "eBikeStation"],
+        "explore": [],
+        "commute": [],
+        "boats": ["boatStation"]
+    }
+
+    return objects.map((object, i) => {
+        const selectedType =
+            preferredTypes[mode]?.find(t => object.types.includes(t)) ||
+            object.types[0];
+
+        if (Array.isArray(object.coords)) {
+            return (
+                <React.Fragment key={`group ${i}`}>
+                    <Polyline key={`route ${i}`} positions={object.coords.map(point => [point.latitude, point.longitude])}
+                        color={difficultyColors[object.difficulty] || "blue"}
+                        weight={4} />
+                    <CustomMarker key={`marker ${i}`}
+                        position={[object.coords[0].latitude, object.coords[0].longitude]}
+                        onClick={() => {
+                            setFocus(object.id);
+                        }}
+                        type={selectedType} />
+                </React.Fragment>
+            )
+        } else if (object.coords instanceof GeoPoint)
+        {
+            return (
+                <CustomMarker key={`marker ${i}`}
+                    position={[object.coords.latitude, object.coords.longitude]}
+                    onClick={() => {
+                        setFocus(object.id);
+                    }}
+                    type={selectedType} />
+            );
+        } else return null;
+    });
+
+}

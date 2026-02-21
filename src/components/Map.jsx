@@ -1,15 +1,11 @@
 import 'leaflet/dist/leaflet.css'
-import L from 'leaflet'
 import { MapContainer, TileLayer, Popup, Marker, useMap, Polyline } from 'react-leaflet'
 import "leaflet-gpx";
-import TrailsOverlay from './TrailsOverlay';
-import MarkersOverlay from './MarkersOverlay';
-import { useMode } from '../context/ModeContext';
+import MapObjectsOverlay from './MapObjectsOverlay';
 
 
-function Map() {
+export default function Map() {
   const position = [45.9863, 8.9700]
-  const { mode } = useMode();
 
   return (
     <div className="mainMap">
@@ -22,11 +18,8 @@ function Map() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {(mode === "bike" || mode === "walk") && <TrailsOverlay />}
-        <MarkersOverlay />
+        <MapObjectsOverlay />
       </MapContainer>
     </div>
   )
 }
-
-export default Map;

@@ -18,7 +18,7 @@ function ModeSelector() {
             <button className="button" onClick={() => setMode("walk")}><RiWalkFill />{t("modeSelector.walk")}</button>
             <button className="button" onClick={() => setMode("explore")}><AiOutlineCompass />{t("modeSelector.explore")}</button>
             <button className="button" onClick={() => setMode("commute")}><FaBusSimple />{t("modeSelector.commute")}</button>
-            <button className="button" onClick={() => setMode("swim")}><PiBoat />{t("modeSelector.boats")}</button>
+            <button className="button" onClick={() => setMode("boats")}><PiBoat />{t("modeSelector.boats")}</button>
         </div>
     );
 }

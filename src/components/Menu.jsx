@@ -1,16 +1,16 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useFocus } from '../context/FocusContext.jsx';
-import { useTrails } from '../context/TrailsContext.jsx';
+import { useObjects } from '../context/ObjectsContext.jsx';
 
 import { IoClose } from "react-icons/io5";
 
 export default function Menu() {
     const { t } = useTranslation();
     const { focus, setFocus } = useFocus();
-    const { trails } = useTrails();
+    const { objects } = useObjects();
 
-    const selectedTrail = trails.find(trail => trail.id === focus);
+    const selectedTrail = objects.find(coords => coords.id === focus);
 
     return (
         <div id="menu">

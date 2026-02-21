@@ -3,10 +3,10 @@ import { useMode } from './ModeContext';
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from '../components/Firebase';
 
-const TrailsContext = createContext();
+const ObjectsContext = createContext();
 
-export function TrailsProvider({ children }) {
-    const [trails, setTrails] = useState([]);
+export function ObjectsProvider({ children }) {
+    const [objects, setObjects] = useState([]);
     const { mode } = useMode();
 
     const typesByMode = {
@@ -21,23 +21,23 @@ export function TrailsProvider({ children }) {
 
     useEffect(() => {
         if (!allowedTypes.length) {
-            setTrails([]);
+            setObjects([]);
             return;
         }
 
-        const trailsModeQuery = query(
-            collection(db, "trails"),
+        const objectsModeQuery = query(
+            collection(db, "objects"),
             where("types", "array-contains-any", allowedTypes)
         );
 
         const fetchData = async () => {
             try {
-                const querySnapshot = await getDocs(trailsModeQuery);
+                const querySnapshot = await getDocs(objectsModeQuery);
                 const data = querySnapshot.docs.map(doc => ({
                     id: doc.id,
                     ...doc.data(),
                 }));
-                setTrails(data);
+                setObjects(data);
             } catch (error) {
                 console.error("Error fetching trails:", error);
             }
@@ -46,12 +46,12 @@ export function TrailsProvider({ children }) {
     }, [mode]);
 
     return (
-        <TrailsContext.Provider value={{ trails }}>
+        <ObjectsContext.Provider value={{ objects }}>
             {children}
-        </TrailsContext.Provider>
+        </ObjectsContext.Provider>
     );
 }
 
-export function useTrails() {
-    return useContext(TrailsContext);
+export function useObjects() {
+    return useContext(ObjectsContext);
 }

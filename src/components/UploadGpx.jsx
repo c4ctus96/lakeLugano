@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Popup, Marker, useMap, Polyline } from 'react-
 import { db } from './Firebase'
 import { useState, useEffect } from "react"
 import GPXParser from "gpxparser";
+import { difficultyColors } from '../constants/difficultyColors';
 
 const position = [45.9863, 8.9700]
 
@@ -14,12 +15,12 @@ function UploadGpx() {
         types: [],
         description: "",
         src: "",
-        track: []
+        coords: []
     });
 
     const pushTrack = async (trail) => {
         try {
-            await addDoc(collection(db, "trails"), trail);
+            await addDoc(collection(db, "objects"), trail);
         } catch (error) {
             console.error("Upload failed: ", error);
         }
@@ -40,8 +41,8 @@ function UploadGpx() {
             src: formData.get("src"),
             lengthKm: parseFloat(formData.get("length")),
             difficulty: Number(formData.get("difficulty")),
-            tags: formData.getAll("types"),
-            track: parsedTrack
+            types: formData.getAll("types"),
+            coords: parsedTrack
         };
         setTrackData(newTrack);
     };
@@ -57,7 +58,7 @@ function UploadGpx() {
                 positions={positions}
                 key="preview"
                 weight={5}
-                color="red"
+                color={difficultyColors[trackData.difficulty] || "blue"}
             />
         );
     }
@@ -73,8 +74,8 @@ function UploadGpx() {
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                {trackData.track?.length > 0 && (<FitBoundsPolyline
-                    positions={trackData.track.map(point => ([point.latitude, point.longitude]))}
+                {trackData.coords?.length > 0 && (<FitBoundsPolyline
+                    positions={trackData.coords.map(point => ([point.latitude, point.longitude]))}
                 />)}
             </MapContainer>
 
@@ -159,7 +160,7 @@ function UploadGpx() {
                     </div>
                     <div className="buttonsRow">
                         <button onClick={() => console.log(trackData)} type="submit">Applica</button>
-                        <button onClick={() => {pushTrack(trackData); alert("Percorso caricato!")}} disabled={trackData.track?.length === 0} >Pubblica</button>
+                        <button onClick={() => {pushTrack(trackData); alert("Percorso caricato!")}} disabled={trackData.coords?.length === 0} >Pubblica</button>
                     </div>
                 </form>
             </div>
