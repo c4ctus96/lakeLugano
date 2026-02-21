@@ -37,18 +37,11 @@ export function TrailsProvider({ children }) {
                     id: doc.id,
                     ...doc.data(),
                 }));
-
-                console.log("Fetched trails:", data);
-
                 setTrails(data);
             } catch (error) {
                 console.error("Error fetching trails:", error);
             }
         };
-
-        console.log("TrailsProvider mode:", mode);
-
-
         fetchData();
     }, [mode]);
 
