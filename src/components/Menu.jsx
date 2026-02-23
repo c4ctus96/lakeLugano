@@ -1,24 +1,50 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { useFocus } from '../context/FocusContext.jsx';
-import { useObjects } from '../context/ObjectsContext.jsx';
+import useIsMobile from "../hooks/useIsMobile";
+import { useState, useRef } from "react";
 
-import { IoClose } from "react-icons/io5";
+export default function Menu({ children }) {
+    const { isMobile } = useIsMobile();
 
-export default function Menu() {
-    const { t } = useTranslation();
-    const { focus, setFocus } = useFocus();
-    const { objects } = useObjects();
+    const sheetRef = useRef(null);
+    const startY = useRef(0);
+    const currentY = useRef(0);
+    const [position, setPosition] = useState("peek"); // "closed" | "peek" | "full"
 
-    const selectedTrail = objects.find(coords => coords.id === focus);
+    const offsetY = useRef(window.innerHeight * 0.3);
+
+    const handleTouchStart = (e) => {
+        startY.current = e.touches[0].clientY;
+    }
+
+    const handleTouchMove = (e) => {
+        const deltaY = startY.current - e.touches[0].clientY;
+        const newY = offsetY.current + deltaY;
+        sheetRef.current.style.height = `${newY}px`;
+        currentY.current = deltaY;
+    }
+
+    const handleTouchEnd = () => {
+        offsetY.current = parseFloat(sheetRef.current.style.height);
+    }
+
 
     return (
         <div id="menu">
-            <button onClick={() => {setFocus(null)}}><IoClose /></button>
-            <h2>{selectedTrail?.name}</h2>
-            {selectedTrail?.lengthKm && <p>{t("menu.length")}: {selectedTrail?.lengthKm} km</p>}
-            {selectedTrail?.difficulty && <p>{t("menu.difficulty")}: {t(`difficulty.${selectedTrail?.difficulty}`)}</p>}
-            <p>{selectedTrail?.description}</p>
+            {isMobile ? (
+                <div
+                    id="bottomSheetMenu"
+                    ref={sheetRef}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                >
+                    <div id="dragHandle"></div>
+                    { children }
+                </div>
+            ) : (
+                <div id="sideMenu">
+                    { children }
+                </div>
+            )}
         </div>
     );
 }
