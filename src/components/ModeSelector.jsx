@@ -13,7 +13,7 @@ function ModeSelector() {
     const { mode, setMode } = useMode();
 
     return (
-        <div className="mode-card">
+        <div className="mode-selector">
             <button className="button" onClick={() => setMode("bike")}><MdDirectionsBike />{t("modeSelector.bike")}</button>
             <button className="button" onClick={() => setMode("walk")}><RiWalkFill />{t("modeSelector.walk")}</button>
             <button className="button" onClick={() => setMode("explore")}><AiOutlineCompass />{t("modeSelector.explore")}</button>

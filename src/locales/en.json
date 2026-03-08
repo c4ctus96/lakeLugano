@@ -17,10 +17,11 @@
         "3": "Expert"
     },
     "landingPage": {
+        
         "section1": {
-            "title": "Explore the breathtaking views!",
-            "text": "Discover the most scenic trails around Lake Lugano. Whether you're biking, walking, or just exploring, our curated routes offer something for everyone. Start your adventure today!",
-            "cta": "Discover Trails"
+            "title": "Compatible with all your devices",
+            "text": "Whether you're on a bike, walking, or exploring, our app works seamlessly across all your devices. Plan your routes and enjoy the beauty of Lake Lugano wherever you are.",
+            "cta": "Try now"
         }
     }
 }
