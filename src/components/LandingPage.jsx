@@ -21,7 +21,8 @@ const LandingPage = () => {
             <Header />
             <div className="page" id="hero-section">
                 <div className="container">
-                    <h1>Explore the Lugano Lake on the Map!</h1>
+                    <h1>Explore the Lugano Lake</h1>
+                    <h1>Like Never Before</h1>
                 </div>
                 <div className="bottom-gradient"></div>
             </div>

@@ -8,7 +8,7 @@ export default function LanguageSelector() {
     }
 
     return (
-        <select value={language} onChange={handleChange}>
+        <select value={language} onChange={handleChange} id="languageSelector">
             <option value="en">English</option>
             <option value="it">Italiano</option>
         </select>
