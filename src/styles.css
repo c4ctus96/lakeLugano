@@ -166,9 +166,9 @@ select {
 
 .page {
     display: flex;
-    flex: 1 1 auto;
-    height: 100dvh;
-    width: 100dvw;
+    flex: 1;
+    min-height: 100dvh;
+    width: 100dvw;  
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
@@ -177,6 +177,7 @@ select {
 .mainPage {
     height: 100dvh;
     width: 100dvw;
+    box-sizing: border-box;
 }
 
 .container {
