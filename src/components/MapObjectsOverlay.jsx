@@ -32,7 +32,7 @@ export default function MapObjectsOverlay() {
                         color={difficultyColors[object.difficulty] || "blue"}
                         weight={4} />
                     <CustomMarker key={`marker ${i}`}
-                        position={[object.coords[0].latitude, object.coords[0].longitude]}
+                        position={[object.coords[Math.floor(object.coords.length/2)].latitude, object.coords[Math.floor(object.coords.length/2)].longitude]}
                         onClick={() => {
                             setFocus(object.id);
                         }}
