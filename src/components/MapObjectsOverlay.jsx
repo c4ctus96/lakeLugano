@@ -30,7 +30,7 @@ export default function MapObjectsOverlay() {
                 <React.Fragment key={`group ${i}`}>
                     <Polyline key={`route ${i}`} positions={object.coords.map(point => [point.latitude, point.longitude])}
                         color={difficultyColors[object.difficulty] || "blue"}
-                        weight={4} />
+                        weight={6} />
                     <CustomMarker key={`marker ${i}`}
                         position={[object.coords[Math.floor(object.coords.length/2)].latitude, object.coords[Math.floor(object.coords.length/2)].longitude]}
                         onClick={() => {

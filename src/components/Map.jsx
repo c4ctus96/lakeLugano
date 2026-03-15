@@ -13,10 +13,16 @@ export default function Map() {
         center={position}
         zoom={13}
         style={{ height: '100vh', width: '100%' }}
-        zoomControl={false}>
+        zoomControl={false}
+        maxZoom={21}
+        zoomSnap={0.25}
+        zoomDelta={0.25}
+      >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          maxNativeZoom={19}
+          maxZoom={21}
         />
         <MapObjectsOverlay />
       </MapContainer>
