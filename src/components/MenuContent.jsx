@@ -33,7 +33,7 @@ export default function MenuContent() {
                     {window.open(`https://www.google.com/maps/dir/?api=1&destination=${selectedTrail?.coords.latitude},${selectedTrail?.coords?.longitude}`)}
                 } >
                     <FiNavigation2 />
-                    Start navigation
+                    {t("menu.buttons.navigation")}
                     <HiOutlineExternalLink /
                 ></button>}
             </div>
