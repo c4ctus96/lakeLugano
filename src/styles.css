@@ -521,13 +521,11 @@ h3 {
         padding: 10px 14px;
         margin: 0px;
         gap: min(16px, 2dvw);
-
         border: 1px solid var(--border);
-
         background-color: var(--bg-light);
     }
 
-    .button {
+    .mode-button {
         display: flex;
         width: 19%;
         text-align: center;

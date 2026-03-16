@@ -14,11 +14,11 @@ function ModeSelector() {
 
     return (
         <div className="mode-selector">
-            <button className={mode === "walk" ? "active" : "mode-button"} onClick={() => setMode("walk")}><RiWalkFill />{t("modeSelector.walk")}</button>
-            <button className={mode === "bike" ? "active" : "mode-button"} onClick={() => setMode("bike")}><MdDirectionsBike />{t("modeSelector.bike")}</button>
-            <button className={mode === "explore" ? "active" : "mode-button"} onClick={() => setMode("explore")}><AiOutlineCompass />{t("modeSelector.explore")}</button>
-            <button className={mode === "commute" ? "active" : "mode-button"} onClick={() => setMode("commute")}><FaBusSimple />{t("modeSelector.commute")}</button>
-            <button className={mode === "boats" ? "active" : "mode-button"} onClick={() => setMode("boats")}><PiBoat />{t("modeSelector.boats")}</button>
+            <button className={`mode-button ${mode === "walk" ? "active" : ""}`} onClick={() => setMode("walk")}><RiWalkFill />{t("modeSelector.walk")}</button>
+            <button className={`mode-button ${mode === "bike" ? "active" : ""}`} onClick={() => setMode("bike")}><MdDirectionsBike />{t("modeSelector.bike")}</button>
+            <button className={`mode-button ${mode === "explore" ? "active" : ""}`} onClick={() => setMode("explore")}><AiOutlineCompass />{t("modeSelector.explore")}</button>
+            <button className={`mode-button ${mode === "commute" ? "active" : ""}`} onClick={() => setMode("commute")}><FaBusSimple />{t("modeSelector.commute")}</button>
+            <button className={`mode-button ${mode === "boats" ? "active" : ""}`} onClick={() => setMode("boats")}><PiBoat />{t("modeSelector.boats")}</button>
         </div>
     );
 }
