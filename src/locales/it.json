@@ -8,7 +8,10 @@
     },
     "menu": {
         "difficulty": "Difficoltà",
-        "length": "Lunghezza"
+        "length": "Lunghezza",
+        "buttons": {
+            "navigation": "Avvia navigazione"
+        }
     },
     "difficulty": {
         "0": "Facile",
@@ -17,10 +20,42 @@
         "3": "Esperto"
     },
     "landingPage": {
-        "section1": {
-            "title": "Esplora i panorami mozzafiato!",
-            "text": "Scopri i sentieri più panoramici intorno al Lago di Lugano. Che tu vada in bici, a piedi o stia semplicemente esplorando, i nostri percorsi selezionati offrono qualcosa per tutti. Inizia la tua avventura oggi!",
-            "cta": "Scopri i percorsi"
+        "hero-section": {
+            "title-1": "Esplora il Lago di Lugano",
+            "title-2": "Come mai prima d'ora"
+        },
+        "mode-cards": {
+            "title": "Trova ciò di cui hai bisogno, rapidamente",
+            "walk": {
+                "title": "A piedi",
+                "text": "Scopri i bellissimi sentieri escursionistici intorno al Lago di Lugano",
+                "cta": "Esplora i sentieri"
+            },
+            "bike": {
+                "title": "In bici",
+                "text": "Esplora il lago in bicicletta",
+                "cta": "Trova percorsi"
+            },
+            "explore": {
+                "title": "Esplora",
+                "text": "Scopri gemme nascoste intorno al Lago di Lugano",
+                "cta": "Inizia a esplorare"
+            },
+            "commute": {
+                "title": "Mezzi pubblici",
+                "text": "Trova opzioni di trasporto pubblico",
+                "cta": "Pianifica il viaggio"
+            },
+            "boats": {
+                "title": "Barche",
+                "text": "Esplora il lago dall'acqua",
+                "cta": "Navigare"
+            }
+        },
+        "compatibility-section": {
+            "title": "Compatibile con tutti i tuoi dispositivi",
+            "text": "Che tu sia in bici, a piedi o stia esplorando, la nostra app funziona perfettamente su tutti i tuoi dispositivi. Pianifica i tuoi percorsi e goditi la bellezza del Lago di Lugano ovunque tu sia.",
+            "cta": "Prova ora"
         }
     }
 }

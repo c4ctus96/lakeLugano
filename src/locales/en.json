@@ -8,7 +8,10 @@
     },
     "menu": {
         "difficulty": "Difficulty",
-        "length": "Length"
+        "length": "Length",
+        "buttons": {
+            "navigation": "Start navigation"
+        }
     },
     "difficulty": {
         "0": "Easy",
@@ -17,8 +20,39 @@
         "3": "Expert"
     },
     "landingPage": {
-        
-        "section1": {
+        "hero-section": {
+            "title-1": "Explore the Lugano Lake",
+            "title-2": "Like Never Before"
+        },
+        "mode-cards": {
+            "title": "Find what you need, quickly",
+            "walk": {
+                "title": "Walk",
+                "text": "Discover the beautiful hike trails of the Lugano lake",
+                "cta": "Explore trails"
+            },
+            "bike": {
+                "title": "Bike",
+                "text": "Explore the lake on bike",
+                "cta": "Find routes"
+            },
+            "explore": {
+                "title": "Explore",
+                "text": "Discover hidden gems around Lugano lake",
+                "cta": "Start exploring"
+            },
+            "commute": {
+                "title": "Commute",
+                "text": "Find public transportation options",
+                "cta": "Plan commute"
+            },
+            "boats": {
+                "title": "Boats",
+                "text": "Explore the lake by water",
+                "cta": "Sail away"
+            }
+        },
+        "compatibility-section": {
             "title": "Compatible with all of your devices",
             "text": "Whether you're on a bike, walking, or exploring, our app works seamlessly across all your devices. Plan your routes and enjoy the beauty of Lake Lugano wherever you are.",
             "cta": "Try now"

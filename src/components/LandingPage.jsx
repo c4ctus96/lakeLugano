@@ -21,48 +21,48 @@ const LandingPage = () => {
             <Header />
             <div className="page" id="hero-section">
                 <div className="container">
-                    <h1>Explore the Lugano Lake</h1>
-                    <h1>Like Never Before</h1>
+                    <h1>{t("landingPage.hero-section.title-1")}</h1>
+                    <h1>{t("landingPage.hero-section.title-2")}</h1>
                 </div>
                 <div className="bottom-gradient"></div>
             </div>
             <div className="page" id="cards-section">
                 <div className="container">
-                    <h1>Find what you need, quickly</h1>
+                    <h1>{t("landingPage.mode-cards.title")}</h1>
                     <div className="grid-container">
                         <div className="card">
                             <RiWalkFill size={iconSize} />
                             <div className="content">
-                                <h2>Walk</h2>
-                                <h3>Discover the beautiful hike trails of the Lugano lake.</h3>
+                                <h2>{t("landingPage.mode-cards.walk.title")}</h2>
+                                <h3>{t("landingPage.mode-cards.walk.text")}</h3>
                             </div>
                         </div>
                         <div className="card">
                             <MdDirectionsBike size={iconSize}/>
                             <div className="content">
-                                <h2>Bike</h2>
-                                <h3>Explore the lake on bike</h3>
+                                <h2>{t("landingPage.mode-cards.bike.title")}</h2>
+                                <h3>{t("landingPage.mode-cards.bike.text")}</h3>
                             </div>
                         </div>
                         <div className="card">
                             <AiOutlineCompass size={iconSize} />
                             <div className="content">
-                                <h2>Explore</h2>
-                                <h3>Discover hidden gems around Lugano lake.</h3>
+                                <h2>{t("landingPage.mode-cards.explore.title")}</h2>
+                                <h3>{t("landingPage.mode-cards.explore.text")}</h3>
                             </div>
                         </div>
                         <div className="card">
                             <FaBusSimple size={iconSize} />
                             <div className="content">
-                                <h2>Commute</h2>
-                                <h3>Find public transportation options.</h3>
+                                <h2>{t("landingPage.mode-cards.commute.title")}</h2>
+                                <h3>{t("landingPage.mode-cards.commute.text")}</h3>
                             </div>
                         </div>
                         <div className="card">
                             <PiBoat size={iconSize} />
                             <div className="content">
-                                <h2>Boats</h2>
-                                <h3>Explore the lake by water.</h3>
+                                <h2>{t("landingPage.mode-cards.boats.title")}</h2>
+                                <h3>{t("landingPage.mode-cards.boats.text")}</h3>
                             </div>
                         </div>
                     </div>
@@ -74,9 +74,9 @@ const LandingPage = () => {
                         {<img src={phone_laptop_example} alt="Lake Selfie" />}
                     </div>
                     <div className="content">
-                        <h1>{t("landingPage.section1.title")}</h1>
-                        <p>{t("landingPage.section1.text")}</p>
-                        <Link to="/map" className="cta" >{t("landingPage.section1.cta")}</Link>
+                        <h1>{t("landingPage.compatibility-section.title")}</h1>
+                        <p>{t("landingPage.compatibility-section.text")}</p>
+                        <Link to="/map" className="cta" >{t("landingPage.compatibility-section.cta")}</Link>
                     </div>
                 </div>
             </div>

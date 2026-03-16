@@ -22,8 +22,7 @@ export default function MenuContent() {
     const { t } = useTranslation();
 
     const selectedTrail = objects.find(coords => coords.id === focus);
-    console.log(selectedTrail?.difficulty);
-    console.log(difficultyColors[selectedTrail?.difficulty]);
+
     return (
         <div id="menu-content">
             <button className="close-button" onClick={() => { setFocus(null) }}><IoClose /></button>
