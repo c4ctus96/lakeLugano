@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useFocus } from '../context/FocusContext.jsx';
 import { useObjects } from '../context/ObjectsContext.jsx';
 import { useTranslation } from 'react-i18next';
+import { GeoPoint } from "firebase/firestore";
 
 import { difficultyColors } from "../constants/difficultyColors.js";
 
@@ -11,6 +12,7 @@ import { MdSignalCellular2Bar } from "react-icons/md";
 import { MdSignalCellular3Bar } from "react-icons/md";
 import { MdSignalCellular4Bar } from "react-icons/md";
 import { LuRuler } from "react-icons/lu";
+import { FiNavigation2 } from "react-icons/fi";
 
 
 export default function MenuContent() {
@@ -22,9 +24,12 @@ export default function MenuContent() {
     console.log(selectedTrail?.difficulty);
     console.log(difficultyColors[selectedTrail?.difficulty]);
     return (
-        <div id="menuContent">
-            <button onClick={() => { setFocus(null) }}><IoClose /></button>
+        <div id="menu-content">
+            <button className="close-button" onClick={() => { setFocus(null) }}><IoClose /></button>
             <h2>{selectedTrail?.name}</h2>
+            <div className="buttonsRow" id="menu-buttons">
+                {selectedTrail?.coords instanceof GeoPoint && <button onClick={() => {window.open(`https://www.google.com/maps/dir/?api=1&destination=${selectedTrail?.coords.latitude},${selectedTrail?.coords?.longitude}`)}} ><FiNavigation2 />Start navigation</button>}
+            </div>
             <div id="tags">
                 {(selectedTrail?.difficulty !== undefined) &&
                     <div className="bubble">
@@ -35,8 +40,7 @@ export default function MenuContent() {
                             borderRadius: '50%',
                             display: 'inline-block',
                             marginRight: '8px'
-                        }}>
-                        </span>
+                        }}></span>
                         {t(`difficulty.${selectedTrail?.difficulty}`)}
                     </div>
                 }
