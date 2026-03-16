@@ -121,6 +121,18 @@ button {
         -2px -2px 5px rgba(255, 255, 255, 0.1);
 }
 
+.mode-selector button {
+    background-color: var(--bg-light);
+    box-shadow: unset;
+    transition: transform 0.2s ease, background-color 0.25s ease;
+}
+
+.mode-selector button.active {
+    background-color: var(--bg);
+    color: var(--accent);
+    transform: scale(1.05);
+}
+
 .bubble {
     display: inline-flex;
     align-items: center;
@@ -500,21 +512,19 @@ h3 {
         bottom: 0;
         left: 0;
         right: 0;
-
         padding-left: 14px;
         padding-right: 14px;
         z-index: 1000;
         justify-content: center;
         align-items: center;
-        background-color: hsl(0, 0%, 80%);
         border-radius: 0px;
         padding: 10px 14px;
         margin: 0px;
         gap: min(16px, 2dvw);
-        background-color: var(--bg);
+
         border: 1px solid var(--border);
-        background: var(--gradient);
-        background-color: var(--bg);
+
+        background-color: var(--bg-light);
     }
 
     .button {

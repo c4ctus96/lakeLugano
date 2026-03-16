@@ -13,6 +13,7 @@ import { MdSignalCellular3Bar } from "react-icons/md";
 import { MdSignalCellular4Bar } from "react-icons/md";
 import { LuRuler } from "react-icons/lu";
 import { FiNavigation2 } from "react-icons/fi";
+import { HiOutlineExternalLink } from "react-icons/hi";
 
 
 export default function MenuContent() {
@@ -28,7 +29,14 @@ export default function MenuContent() {
             <button className="close-button" onClick={() => { setFocus(null) }}><IoClose /></button>
             <h2>{selectedTrail?.name}</h2>
             <div className="buttonsRow" id="menu-buttons">
-                {selectedTrail?.coords instanceof GeoPoint && <button onClick={() => {window.open(`https://www.google.com/maps/dir/?api=1&destination=${selectedTrail?.coords.latitude},${selectedTrail?.coords?.longitude}`)}} ><FiNavigation2 />Start navigation</button>}
+                {selectedTrail?.coords instanceof GeoPoint &&
+                <button onClick={() =>
+                    {window.open(`https://www.google.com/maps/dir/?api=1&destination=${selectedTrail?.coords.latitude},${selectedTrail?.coords?.longitude}`)}
+                } >
+                    <FiNavigation2 />
+                    Start navigation
+                    <HiOutlineExternalLink /
+                ></button>}
             </div>
             <div id="tags">
                 {(selectedTrail?.difficulty !== undefined) &&
