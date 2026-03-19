@@ -7,6 +7,7 @@ import { LanguageProvider } from './context/LanguageContext.jsx'
 import { FocusProvider } from './context/FocusContext.jsx'
 import { ModeProvider } from './context/ModeContext.jsx'
 import { ObjectsProvider } from './context/ObjectsContext.jsx'
+import { ImagesProvider } from './context/ImagesContext.jsx'
 
 //import './index.css'
 import './styles.css'
@@ -15,15 +16,17 @@ import './components/i18next.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename={import.meta.env.PROD ? "/lakeLugano" : "/"}>
+    <BrowserRouter basename={import.meta.env.VITE_USE_SUBPATH ? "/lakeLugano" : "/"}>
       <ThemeProvider>
         <LanguageProvider>
           <ModeProvider>
-            <FocusProvider>
-              <ObjectsProvider>
-                <App />
-              </ObjectsProvider>
-            </FocusProvider>
+            <ObjectsProvider>
+              <FocusProvider>
+                <ImagesProvider>
+                  <App />
+                </ImagesProvider>
+              </FocusProvider>
+            </ObjectsProvider>
           </ModeProvider>
         </LanguageProvider>
       </ThemeProvider>

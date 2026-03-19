@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useFocus } from '../context/FocusContext.jsx';
 import { useObjects } from '../context/ObjectsContext.jsx';
+import { useImages } from '../context/ImagesContext.jsx';
 import { useTranslation } from 'react-i18next';
 import { GeoPoint } from "firebase/firestore";
 
@@ -17,11 +18,10 @@ import { HiOutlineExternalLink } from "react-icons/hi";
 
 
 export default function MenuContent() {
-    const { focus, setFocus } = useFocus();
-    const { objects } = useObjects();
+    const { setFocus, selectedTrail } = useFocus();
     const { t } = useTranslation();
-
-    const selectedTrail = objects.find(coords => coords.id === focus);
+    const { images } = useImages();
+    
 
     return (
         <div id="menu-content">
@@ -34,8 +34,8 @@ export default function MenuContent() {
                 } >
                     <FiNavigation2 />
                     {t("menu.buttons.navigation")}
-                    <HiOutlineExternalLink /
-                ></button>}
+                    <HiOutlineExternalLink />
+                </button>}
             </div>
             <div id="tags">
                 {(selectedTrail?.difficulty !== undefined) &&
@@ -59,6 +59,7 @@ export default function MenuContent() {
                 }
             </div>
             <p>{selectedTrail?.description}</p>
+            {images.map(pic => <img src={pic.url}></img>)}
         </div>
     );
 
