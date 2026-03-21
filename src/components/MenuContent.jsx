@@ -58,6 +58,17 @@ export default function MenuContent() {
                     </div>
                 }
             </div>
+            {selectedTrail?.bikes && <div className="card">
+                <div className="content">
+                    <h2>Bikes available: {selectedTrail?.bikes?.filter(x => x !== 0).length}/{selectedTrail?.bikes?.length}</h2>
+                    {selectedTrail?.bikes?.map((bike, i) => (
+                    <div className="buttonsRow" key={`bike-${i}`}>
+                        <p>bike {i+1}:</p>
+                        <progress className="batery-bar" value={bike} max={100}>38%</progress>
+                    </div>
+                ))}
+                </div>
+            </div>}
             <p>{selectedTrail?.description}</p>
             {images.map(pic => <img src={pic.url}></img>)}
         </div>
