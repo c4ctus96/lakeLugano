@@ -9,6 +9,7 @@ import { MdOutlineDirectionsBike } from "react-icons/md";
 import { MdOutlineElectricBike } from "react-icons/md";
 import { GrAnchor } from "react-icons/gr";
 import { FaCircleDot } from "react-icons/fa6";
+import { TbSpeedboat } from "react-icons/tb";
 
 import { markerTypeColors } from '../constants/markerTypeColors';
 
@@ -23,6 +24,7 @@ export default function CustomMarker({ position, type, onClick }) {
         "eBikeStation": <MdOutlineElectricBike size={iconSize} className="icon" />,
         "boatStation": <GrAnchor size={iconSize} className="icon" />,
         "trainStation": <PiTrain size={iconSize} className="icon" />,
+        "boatRoute": <TbSpeedboat size={iconSize} className="icon"/>,
         "default": <FaCircleDot size={iconSize} className="icon" />
     }
 

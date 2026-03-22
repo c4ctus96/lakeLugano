@@ -40,7 +40,7 @@ function UploadGpx() {
             description: formData.get("description"),
             src: formData.get("src"),
             lengthKm: parseFloat(formData.get("length")),
-            difficulty: Number(formData.get("difficulty")),
+            ...(formData.get("difficulty") !== "" && { difficulty: Number(formData.get("difficulty")) }),
             types: formData.getAll("types"),
             coords: parsedTrack
         };
@@ -137,7 +137,7 @@ function UploadGpx() {
                     <div className="buttonsRow">
                         <a>Difficoltà:</a>
                         <label>
-                            <select name="difficulty" required>
+                            <select name="difficulty">
                                 <option value="">--Seleziona--</option>
                                 <option value="0">Facile</option>
                                 <option value="1">Media</option>
@@ -156,6 +156,10 @@ function UploadGpx() {
                         <label>
                             <input type="checkbox" name="types" value="bikeTrail" />
                             Percorso in bici
+                        </label>
+                        <label>
+                            <input type="checkbox" name="types" value="boatRoute" />
+                            Percorso laxi
                         </label>
                     </div>
                     <div className="buttonsRow">

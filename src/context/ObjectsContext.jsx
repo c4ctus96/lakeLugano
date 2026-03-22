@@ -14,7 +14,7 @@ export function ObjectsProvider({ children }) {
         "bike": ["bikeTrail", "eBikeStation"],
         "explore": ["legacy", "restaraunt", "viewoint"],
         "commute": ["busStation", "trainStation", "ferryPort"],
-        "boats": ["boatStation"]
+        "boats": ["boatStation", "boatRoute"]
     };
 
     const allowedTypes = typesByMode[mode] || [];

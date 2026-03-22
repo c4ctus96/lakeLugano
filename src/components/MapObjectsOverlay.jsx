@@ -13,22 +13,21 @@ export default function MapObjectsOverlay() {
     const { mode } = useMode();
 
     const preferredTypes = {
-        "walk": ["hikeTrail"],
+        "walk": ["hiketrail"],
         "bike": ["bikeTrail", "eBikeStation"],
         "explore": [],
         "commute": [],
-        "boats": ["boatStation"]
+        "boats": ["boatStation", "boatRoute"]
     }
 
     return objects.map((object, i) => {
         const selectedType =
             preferredTypes[mode]?.find(t => object.types.includes(t)) ||
             object.types[0];
-
         if (Array.isArray(object.coords)) {
             return (
                 <React.Fragment key={`group ${i}`}>
-                    <Polyline key={`route ${i}`} positions={object.coords.map(point => [point.latitude, point.longitude])}
+                    <Polyline key={`route ${i}-${object.difficulty}`} positions={object.coords.map(point => [point.latitude, point.longitude])}
                         color={difficultyColors[object.difficulty] || "blue"}
                         weight={6} />
                     <CustomMarker key={`marker ${i}`}

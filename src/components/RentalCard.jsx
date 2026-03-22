@@ -34,10 +34,10 @@ export default function RentalCard({ type })
 
     return (
         <>
-            {items.length>0 && <div className="card" style={{}}>
+            {items.length>0 && <div className="card rentals-card" style={{}}>
                 <div className="content" style={{ padding: '0', gap: '1.5rem' }}>
                     <h2>{t(`menu.rental-menu.${type}.title`)}</h2>
-                    <p style={{ margin: '0px' }}>{t(`menu.rental-menu.${type}.availability`)}{items?.filter(x => x !== 0).length}/{items?.length}</p>
+                    <p style={{ margin: '0px' }}>{t(`menu.rental-menu.${type}.availability`)} {items?.filter(x => x !== 0).length}/{items?.length}</p>
                     <div className="buttonsRow" style={{ display: 'flex', justifyContent: 'space-around', flex: '1', width: '100%', gap: 'auto' }}>
                         {items?.filter(x => x !== 0).map((chargeLevel, i) => (
                             <div key={`${type}-rental-${i}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
