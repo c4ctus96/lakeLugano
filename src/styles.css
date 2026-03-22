@@ -28,7 +28,8 @@ body[data-theme="dark"] {
     --border: hsl(0, 0%, 20%);
     --gradient: linear-gradient(0deg, var(--bg) 80%, var(--bg-light));
     --accent: hsl(204, 62%, 27%);
-    --shadow: rgba(255, 255, 255, 0.1);
+    --shadow: hsla(0, 0%, 100%, 0.1);
+    --accent-shadow: hsla(204, 75%, 49%, 0.3);
 }
 
 body[data-theme="light"] {
@@ -39,8 +40,9 @@ body[data-theme="light"] {
     --text-muted: hsl(0, 0%, 30%);
     --border: hsl(0, 0%, 80%);
     --gradient: linear-gradient(0deg, var(--bg) 80%, var(--bg-light));
-    --accent: hsl(204, 62%, 27%);
+    --accent: hsl(204, 60%, 39%);
     --shadow: rgba(0, 0, 0, 0.1);
+    --accent-shadow: hsla(204, 75%, 49%, 0.3);
 }
 
 
@@ -119,6 +121,12 @@ button {
     background-color: var(--bg-light);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
         -2px -2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.accent-btn {
+    color: #fff;
+    background-color: var(--accent);
+    box-shadow: 0px 4px 6px var(--accent-shadow);
 }
 
 .mode-selector button {
@@ -218,7 +226,7 @@ select {
     display: flex;
     flex: 1;
     min-height: 100dvh;
-    width: 100dvw;  
+    width: 100dvw;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
@@ -287,12 +295,14 @@ img {
     text-align: left;
 }
 
-.card svg {
+.card>svg {
     padding: 1rem;
 }
 
-.card h2, h3 {
-    margin: 0 0 0.25em 0; /* small bottom spacing */
+.card h2,
+h3 {
+    margin: 0 0 0.25em 0;
+    /* small bottom spacing */
 }
 
 .card .content {
@@ -347,23 +357,23 @@ p {
 
 
 #hero-section h1 {
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     color: #fff;
     font-size: clamp(2rem, 8vw, 5rem);
     margin: 0;
 }
 
-#hero-section .bottom-gradient  {
+#hero-section .bottom-gradient {
     width: 100%;
     height: 30%;
     bottom: 0;
     left: 0;
     position: absolute;
-    background: linear-gradient(180deg,rgba(255, 0, 0, 0) 1%, var(--bg-dark));
+    background: linear-gradient(180deg, rgba(255, 0, 0, 0) 1%, var(--bg-dark));
     border: none;
 }
 
-#cards-section > .container{
+#cards-section>.container {
     text-align: center;
     text-overflow: ellipsis;
 }
@@ -372,7 +382,7 @@ p {
     font-size: clamp(1.5rem, 8vw, 3rem);
 }
 
-#menu > * {
+#menu>* {
     display: flex;
     position: fixed;
     left: 0;
@@ -415,7 +425,7 @@ p {
     align-self: flex-start;
 }
 
-#menu p{
+#menu p {
     color: var(--text-muted);
     font-size: 1rem;
     line-height: 1.4rem;

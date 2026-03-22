@@ -10,15 +10,19 @@
     "deploy": "npm run build-ghpages && gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview",
-    "gh": "git add . && git commit -m \"${npm_config_m:=update}\" && git push origin main && npm run deploy"
+    "gh": "git add . && git commit -m \"${npm_config_m:-update}\" && git push origin main && npm run deploy"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.9",
     "firebase": "^12.6.0",
     "gpxparser": "^3.0.8",
     "i18next": "^25.7.1",
     "leaflet": "^1.9.4",
     "leaflet-gpx": "^2.2.0",
     "react": "^18.3.1",
+    "react-circular-progressbar": "^2.2.0",
     "react-dom": "^18.3.1",
     "react-i18next": "^16.4.0",
     "react-icons": "^5.5.0",

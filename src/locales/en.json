@@ -10,7 +10,19 @@
         "difficulty": "Difficulty",
         "length": "Length",
         "buttons": {
-            "navigation": "Start navigation"
+            "navigation": "Start navigation",
+            "book-bikes": "Book e-bikes",
+            "book-boats": "Book boats"
+        },
+        "rental-menu": {
+            "bikes": {
+                "title": "You can rent an e-bike here!",
+                "availability": "Bikes available:"
+            },
+            "boats": {
+                "title": "You can rent a boat here!",
+                "availability": "Boats available:"
+            }
         }
     },
     "difficulty": {
