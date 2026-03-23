@@ -83,7 +83,7 @@ export default function MenuContent() {
             <RentalCard type={mode == "bike" ? "bikes" : mode}/>
 
             <p>{selectedTrail?.description}</p>
-            {/*images.map(pic => <img src={pic.url}></img>)*/}
+            {images.map(pic => <img src={pic.url}></img>)}
         </div>
     );
 

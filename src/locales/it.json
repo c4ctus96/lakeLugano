@@ -10,7 +10,19 @@
         "difficulty": "Difficoltà",
         "length": "Lunghezza",
         "buttons": {
-            "navigation": "Avvia navigazione"
+            "navigation": "Avvia navigazione",
+            "book-bikes": "Prenota e-bike",
+            "book-boats": "Prenota barche"
+        },
+        "rental-menu": {
+            "bikes": {
+                "title": "Puoi noleggiare una bici elettrica qui!",
+                "availability": "E-bike disponibili:"
+            },
+            "boats": {
+                "title": "Puoi noleggiare una barca qui!",
+                "availability": "Barche disponibili:"
+            }
         }
     },
     "difficulty": {

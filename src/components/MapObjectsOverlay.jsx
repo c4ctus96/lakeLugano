@@ -15,7 +15,7 @@ export default function MapObjectsOverlay() {
     const preferredTypes = {
         "walk": ["hiketrail"],
         "bike": ["bikeTrail", "eBikeStation"],
-        "explore": [],
+        "explore": ["mountain"],
         "commute": [],
         "boats": ["boatStation", "boatRoute"]
     }

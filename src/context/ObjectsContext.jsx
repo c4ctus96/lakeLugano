@@ -12,7 +12,7 @@ export function ObjectsProvider({ children }) {
     const typesByMode = {
         "walk": ["hikeTrail"],
         "bike": ["bikeTrail", "eBikeStation"],
-        "explore": ["legacy", "restaraunt", "viewoint"],
+        "explore": ["legacy", "restaraunt", "viewoint", "mountain", "church", "military"],
         "commute": ["busStation", "trainStation", "ferryPort"],
         "boats": ["boatStation", "boatRoute"]
     };

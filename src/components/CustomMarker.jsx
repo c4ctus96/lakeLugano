@@ -10,6 +10,9 @@ import { MdOutlineElectricBike } from "react-icons/md";
 import { GrAnchor } from "react-icons/gr";
 import { FaCircleDot } from "react-icons/fa6";
 import { TbSpeedboat } from "react-icons/tb";
+import { LiaCrossSolid } from "react-icons/lia";
+import { FaMountainSun } from "react-icons/fa6";
+import { GiMedal } from "react-icons/gi";
 
 import { markerTypeColors } from '../constants/markerTypeColors';
 
@@ -25,6 +28,9 @@ export default function CustomMarker({ position, type, onClick }) {
         "boatStation": <GrAnchor size={iconSize} className="icon" />,
         "trainStation": <PiTrain size={iconSize} className="icon" />,
         "boatRoute": <TbSpeedboat size={iconSize} className="icon"/>,
+        "mountain": <FaMountainSun size={iconSize} className="icon"/>,
+        "church": <LiaCrossSolid size={iconSize} className="icon"/>,
+        "military": <GiMedal size={iconSize} className="icon"/>,
         "default": <FaCircleDot size={iconSize} className="icon" />
     }
 
