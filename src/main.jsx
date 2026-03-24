@@ -9,8 +9,8 @@ import { ModeProvider } from './context/ModeContext.jsx'
 import { ObjectsProvider } from './context/ObjectsContext.jsx'
 import { ImagesProvider } from './context/ImagesContext.jsx'
 
-//import './index.css'
 import './styles.css'
+import './index.css'
 import App from './App.jsx'
 import './components/i18next.jsx'
 

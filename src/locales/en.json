@@ -34,7 +34,51 @@
     "landingPage": {
         "hero-section": {
             "title-1": "Explore the Lugano Lake",
-            "title-2": "Like Never Before"
+            "title-2": "Like Never Before",
+            "description": "Discover the magic of the Swiss-Italian lake with unique trails, secret spots, and curated local guides.",
+            "cta-explore": "Explore the map",
+            "cta-culture": "Discover the culture"
+        },
+        "explore-section": {
+            "title": "Explore the Region",
+            "subtitle": "Tailored experiences for every type of traveler.",
+            "explore-walk": "Walk",
+            "explore-walk-desc": "Scenic alpine trails and city promenades.",
+            "explore-bike": "Bike",
+            "explore-bike-desc": "Curated cycling paths for all levels.",
+            "explore-explore": "Explore",
+            "explore-explore-desc": "Uncover hidden gems and local culture.",
+            "explore-commute": "Commute",
+            "explore-commute-desc": "Live transit updates for the city network.",
+            "explore-boats": "Boats",
+            "explore-boats-desc": "Ferry schedules across Lake Lugano."
+        },
+        "stats": {
+            "stats-trails": "KM of Trails",
+            "stats-stations": "Charging Stations",
+            "stats-poi": "Points of Interest",
+            "stats-transit": "Transit Tracking"
+        },
+        "features": {
+            "title": "Interactive Map & Live Tracking",
+            "description": "Our interactive map is built for the modern explorer. Discover curated local gems, track live battery levels for all our E-bikes and Laxis, and know exactly when the next boat arrives.",
+            "battery-title": "Live Battery Tracking",
+            "battery-desc": "Monitor real-time battery levels for all our E-bikes and Laxi services to ensure you're always charged up for the journey.",
+            "transit-title": "Live Transit Data",
+            "transit-desc": "Integrated GPS tracking for all Lugano Region buses, funiculars, and ferries with precise arrival times.",
+            "curated-title": "Curated Lists",
+            "curated-desc": "Exclusive recommendations from local guides, from the best grottos to quiet swimming spots.",
+            "card-title": "Live Battery Tracking",
+            "card-desc": "E-bikes & Laxi fully monitored"
+        },
+        "cta": {
+            "title": "Ready to Explore Lugano?",
+            "description": "This web portal is already 90% complete and fully functional. Just need final touches and it will be ready to launch as soon as possible.",
+            "cta-explore": "Explore the map",
+            "cta-culture": "Discover the culture"
+        },
+        "footer": {
+            "description": "Created as a functional prototype for the Rotary CittàDeiLaghiFuturo contest. This platform is 90% complete, fully interactive, and ready for deployment."
         },
         "mode-cards": {
             "title": "Find what you need, quickly",

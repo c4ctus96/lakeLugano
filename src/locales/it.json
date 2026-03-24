@@ -34,7 +34,51 @@
     "landingPage": {
         "hero-section": {
             "title-1": "Esplora il Lago di Lugano",
-            "title-2": "Come mai prima d'ora"
+            "title-2": "Come mai prima d'ora",
+            "description": "Scopri la magia del lago svizzero-italiano con sentieri unici, posti segreti e guide locali curate.",
+            "cta-explore": "Esplora la mappa",
+            "cta-culture": "Scopri la cultura"
+        },
+        "explore-section": {
+            "title": "Esplora la Regione",
+            "subtitle": "Esperienze personalizzate per ogni tipo di viaggiatore.",
+            "explore-walk": "A piedi",
+            "explore-walk-desc": "Sentieri alpini panoramici e passeggiate cittadine.",
+            "explore-bike": "In bici",
+            "explore-bike-desc": "Percorsi ciclabili curati per tutti i livelli.",
+            "explore-explore": "Esplora",
+            "explore-explore-desc": "Scopri gemme nascoste e cultura locale.",
+            "explore-commute": "Mezzi pubblici",
+            "explore-commute-desc": "Aggiornamenti dei trasporti in diretta per la rete cittadina.",
+            "explore-boats": "Barche",
+            "explore-boats-desc": "Orari dei traghetti attraverso il Lago di Lugano."
+        },
+        "stats": {
+            "stats-trails": "KM di Sentieri",
+            "stats-stations": "Stazioni di Ricarica",
+            "stats-poi": "Punti di Interesse",
+            "stats-transit": "Tracciamento Trasporti"
+        },
+        "features": {
+            "title": "Mappa Interattiva e Tracciamento in Diretta",
+            "description": "La nostra mappa interattiva è costruita per l'esploratore moderno. Scopri gemme locali curate, monitora i livelli di batteria in diretta per tutte le nostre biciclette elettriche e taxi, e saprai esattamente quando arriva il prossimo traghetto.",
+            "battery-title": "Tracciamento Batteria in Diretta",
+            "battery-desc": "Monitora i livelli di batteria in tempo reale per tutti i nostri servizi di biciclette elettriche e taxi per assicurarti di essere sempre carico per il viaggio.",
+            "transit-title": "Dati Transito in Diretta",
+            "transit-desc": "Tracciamento GPS integrato per tutti gli autobus, funivie e traghetti della Regione Lugano con orari di arrivo precisi.",
+            "curated-title": "Liste Curate",
+            "curated-desc": "Raccomandazioni esclusive da guide locali, dai migliori grottoni ai posti di balneazione tranquilli.",
+            "card-title": "Tracciamento Batteria in Diretta",
+            "card-desc": "Biciclette elettriche e taxi completamente monitorati"
+        },
+        "cta": {
+            "title": "Pronto a Esplorare Lugano?",
+            "description": "Questo portale web è già al 90% completo e completamente funzionale. Abbiamo solo bisogno degli ultimi ritocchi ed sarà pronto per il lancio il prima possibile.",
+            "cta-explore": "Esplora la mappa",
+            "cta-culture": "Scopri la cultura"
+        },
+        "footer": {
+            "description": "Creato come prototipo funzionale per il concorso Rotary CittàDeiLaghiFuturo. Questa piattaforma è al 90% completa, completamente interattiva e pronta per lo spiegamento."
         },
         "mode-cards": {
             "title": "Trova ciò di cui hai bisogno, rapidamente",
